@@ -11,7 +11,8 @@
 
 <div align=center><img width="200" src="https://github.com/Songyang2017/download_qq_album/blob/master/images/v2-2c30710aa2c17134e658a9b18605ed2d_r.jpg?raw=true"/></div> 
 
-废话不多说。
+废话不多说，开撸！
 
 #### 1. 获取好友相册的XML文件
-打开连接  [http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码](http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码)
+打开链接获取好友相册列表  [http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码](http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码)  
+打开链接获取好友相册照片  [http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID](http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID)
