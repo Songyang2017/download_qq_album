@@ -9,7 +9,7 @@
 
 **注意！，此方法下载的照片是神不知过不觉的，不会产生访问记录，适合像本屌一样的不敢跟女神表白的人使用**
 
-<div align=center><img width="200" src="https://github.com/Songyang2017/download_qq_album/blob/master/images/v2-2c30710aa2c17134e658a9b18605ed2d_r.jpg?raw=true"/></div> 
+<div align=left><img width="200" src="https://github.com/Songyang2017/download_qq_album/blob/master/images/v2-2c30710aa2c17134e658a9b18605ed2d_r.jpg?raw=true"/></div> 
 
 废话不多说，开撸！
 
