@@ -14,5 +14,5 @@
 废话不多说，开撸！
 
 #### 1. 获取好友相册的XML文件
-打开链接获取好友相册列表  [http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码](http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码)  
-打开链接获取好友相册照片  [http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID](http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID)
+获取好友相册列表  [http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码](http://photo.qq.com/fcgi-bin/fcg_list_album?uin=QQ号码)  
+获取好友相册照片  [http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID](http://photo.qq.com/fcgi-bin/fcg_list_photo?uin=QQ号码&albumid=相册ID)
