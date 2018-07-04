@@ -10,11 +10,11 @@ collection = doc.documentElement
 #if collection.hasAttribute("shelf"):
 #   print ("Root element : %s" % collection.getAttribute("shelf"))
 
-# # 获取所有pic
+#  获取所有pic
 pics = collection.getElementsByTagName("pic")
 
 i = 0
-# # 打印每部电影的详细信息
+#  打印每张照片的详细信息
 for pic in pics:
    print ("\n*****Pic*****\n")
 #   if movie.hasAttribute("title"):
@@ -33,9 +33,9 @@ for pic in pics:
    imgurl = origin_url.childNodes[0].data
    print ("origin_url: %s" % imgurl)
    data = urllib.request.urlopen(imgurl).read()   #打开URL
-   path = str(i)+"-"+shoottime.childNodes[0].data+"me.jpg"     #读取，写入G盘的资料文件夹
+   path = str(i)+"-"+shoottime.childNodes[0].data+"me.jpg"     #用序号累加的方式为每张照片命名
    f = open('img/'+path,"wb")
-   i = i+1                    #一行一行读
+   i = i+1                    
    f.write(data) 
    
 
