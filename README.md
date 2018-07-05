@@ -22,7 +22,7 @@
 将获取到的相册列表的XML文件下载下来，用编辑器打来并将其编码格式改为`UTF-8`格式（我使用的是Sublime Text），同时把XML文件的头部的`encoding`属性改为`utf-8`，不然后面解析时会报错
 
 #### 2. 实现原理
-该脚本使用Python的xml.dom.minidom模块来解析XML文件，将文件中的`origin_url`字段提取出来，然后再使用`urllib`模块将图片保存下来
+该脚本使用Python的`xml.dom.minidom`模块来解析XML文件，将文件中的`origin_url`字段提取出来，然后再使用`urllib`模块将图片保存下来
 
 #### 3. 运行并下载
 打开`index.py`文件，在```doc = minidom.parse("")```中填入所要解析的XML文件，注意路径要正确，然后在```f = open('img/'+path,"wb")```中将`'img/'`改为你要存放文件的文件夹（注意路径），脚本不会创建文件夹，因此需要手动来建。  
