@@ -1,18 +1,22 @@
 from xml.dom.minidom import parse
 from xml.dom import minidom
 import urllib
+import os
 from urllib.request import urlopen
 
 
 # 使用minidom解析器打开 XML 文档
-doc = minidom.parse("fcg_list_album.xml")
+doc = minidom.parse("./fcg_list_photo3.xml")
 collection = doc.documentElement
 #if collection.hasAttribute("shelf"):
 #   print ("Root element : %s" % collection.getAttribute("shelf"))
 
 #  获取所有pic
 pics = collection.getElementsByTagName("pic")
-
+#获取相册名
+folderName = collection.getElementsByTagName('name')[0].childNodes[0].data
+#建立以相册名命名的文件夹
+os.mkdir(folderName)
 i = 0
 #  打印每张照片的详细信息
 for pic in pics:
@@ -34,7 +38,8 @@ for pic in pics:
    print ("origin_url: %s" % imgurl)
    data = urllib.request.urlopen(imgurl).read()   #打开URL
    path = str(i)+"-"+shoottime.childNodes[0].data+"me.jpg"     #用序号累加的方式为每张照片命名
-   f = open('img/'+path,"wb")
+
+   f = open(folderName+'/'+path,"wb")
    i = i+1                    
    f.write(data) 
    
