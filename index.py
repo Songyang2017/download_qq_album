@@ -1,46 +1,21 @@
 from xml.dom.minidom import parse
-from xml.dom import minidom
-import urllib
+from urllib import request
 import os
-from urllib.request import urlopen
 
-
-# 使用minidom解析器打开 XML 文档
-doc = minidom.parse("./fcg_list_photo3.xml")
-collection = doc.documentElement
-#if collection.hasAttribute("shelf"):
-#   print ("Root element : %s" % collection.getAttribute("shelf"))
-
-#  获取所有pic
-pics = collection.getElementsByTagName("pic")
-#获取相册名
-folderName = collection.getElementsByTagName('name')[0].childNodes[0].data
-#建立以相册名命名的文件夹
+k = 0
+fileName = input('文件名：')
+Dom = parse(fileName).documentElement
+folderName = Dom.getElementsByTagName('name')[0].childNodes[0].data
+pics = Dom.getElementsByTagName('pic')
 os.mkdir(folderName)
-i = 0
-#  打印每张照片的详细信息
-for pic in pics:
-   print ("\n*****Pic*****\n")
-#   if movie.hasAttribute("title"):
-#      print ("Title: %s" % movie.getAttribute("title"))
 
-   shoottime = pic.getElementsByTagName('shoottime')[0]
-   print ("Shoottime: %s" % shoottime.childNodes[0].data)
-
-   # cameratype = pic.getElementsByTagName('cameratype')[0]
-   # print ("Cameratype: %s" % cameratype.childNodes[0].data)
-
-   # rawshoottime = pic.getElementsByTagName('rawshoottime')[0]
-   # print ("Rawshoottime: %s" % rawshoottime.childNodes[0].data)
-
-   origin_url = pic.getElementsByTagName('origin_url')[0]
-   imgurl = origin_url.childNodes[0].data
-   print ("origin_url: %s" % imgurl)
-   data = urllib.request.urlopen(imgurl).read()   #打开URL
-   path = str(i)+"-"+shoottime.childNodes[0].data+"me.jpg"     #用序号累加的方式为每张照片命名
-
-   f = open(folderName+'/'+path,"wb")
-   i = i+1                    
-   f.write(data) 
-   
-
+for i in pics:
+    url = i.getElementsByTagName('origin_url')[0].childNodes[0].data
+    shoottime = i.getElementsByTagName('shoottime')[0].childNodes[0].data
+    print('--------Pic--------')
+    print(shoottime)
+    data = request.urlopen(url).read()
+    k = k + 1
+    file = str(k) + '.jpg'
+    f = open(folderName + '/' + file, 'wb+')
+    f.write(data)
